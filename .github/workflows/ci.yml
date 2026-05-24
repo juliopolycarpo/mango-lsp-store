@@ -5,6 +5,20 @@ on:
   push:
     branches:
       - main
+      - "feat/**"
+      - "fix/**"
+      - "bugfix/**"
+      - "hotfix/**"
+      - "chore/**"
+      - "docs/**"
+      - "refactor/**"
+      - "test/**"
+      - "security/**"
+      - "perf/**"
+      - "ci/**"
+      - "claude/**"
+      - "copilot/**"
+      - "codex/**"
 
 permissions:
   contents: read
