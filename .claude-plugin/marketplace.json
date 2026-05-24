@@ -1,0 +1,58 @@
+{
+  "$schema": "https://www.schemastore.org/claude-code-marketplace.json",
+  "name": "mango-lsp",
+  "description": "LSP Claude Code plugin store for TypeScript (tsgo), Biome, Vue, Svelte, and Astro.",
+  "owner": {
+    "name": "Julio Polycarpo"
+  },
+  "plugins": [
+    {
+      "name": "tsgo-lsp",
+      "version": "1.0.0",
+      "description": "TypeScript and JavaScript code intelligence via tsgo.",
+      "source": "./plugins/tsgo-lsp",
+      "category": "development",
+      "tags": ["lsp", "typescript", "javascript", "tsgo"]
+    },
+    {
+      "name": "biome-lsp",
+      "version": "1.0.0",
+      "description": "Biome language server for JavaScript and TypeScript diagnostics and code actions.",
+      "source": "./plugins/biome-lsp",
+      "category": "development",
+      "tags": ["lsp", "biome", "javascript", "typescript", "diagnostics"]
+    },
+    {
+      "name": "biome-web-lsp",
+      "version": "1.0.0",
+      "description": "Biome language server for JSON, CSS, and HTML diagnostics and code actions.",
+      "source": "./plugins/biome-web-lsp",
+      "category": "development",
+      "tags": ["lsp", "biome", "web", "json", "css", "html"]
+    },
+    {
+      "name": "vue-lsp",
+      "version": "1.0.0",
+      "description": "Vue language server for Vue single-file components.",
+      "source": "./plugins/vue-lsp",
+      "category": "development",
+      "tags": ["lsp", "vue"]
+    },
+    {
+      "name": "svelte-lsp",
+      "version": "1.0.0",
+      "description": "Svelte language server for Svelte components.",
+      "source": "./plugins/svelte-lsp",
+      "category": "development",
+      "tags": ["lsp", "svelte"]
+    },
+    {
+      "name": "astro-lsp",
+      "version": "1.0.0",
+      "description": "Astro language server for Astro components.",
+      "source": "./plugins/astro-lsp",
+      "category": "development",
+      "tags": ["lsp", "astro"]
+    }
+  ]
+}

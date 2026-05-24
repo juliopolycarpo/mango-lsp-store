@@ -1,0 +1,14 @@
+{
+  "name": "vue-lsp",
+  "description": "Vue language server for Vue single-file components.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Julio Polycarpo",
+    "url": "https://github.com/juliopolycarpo"
+  },
+  "homepage": "https://github.com/juliopolycarpo/mango-lsp-store",
+  "repository": "https://github.com/juliopolycarpo/mango-lsp-store",
+  "license": "MIT",
+  "keywords": ["lsp", "vue"],
+  "lspServers": "./.lsp.json"
+}

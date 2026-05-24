@@ -1,0 +1,13 @@
+{
+  "biome-web": {
+    "command": "npx",
+    "args": ["--yes", "--package", "@biomejs/biome", "biome", "lsp-proxy"],
+    "extensionToLanguage": {
+      ".json": "json",
+      ".jsonc": "jsonc",
+      ".css": "css",
+      ".html": "html"
+    },
+    "startupTimeout": 60000
+  }
+}

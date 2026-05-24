@@ -1,0 +1,17 @@
+{
+  "biome": {
+    "command": "npx",
+    "args": ["--yes", "--package", "@biomejs/biome", "biome", "lsp-proxy"],
+    "extensionToLanguage": {
+      ".js": "javascript",
+      ".jsx": "javascriptreact",
+      ".mjs": "javascript",
+      ".cjs": "javascript",
+      ".ts": "typescript",
+      ".tsx": "typescriptreact",
+      ".mts": "typescript",
+      ".cts": "typescript"
+    },
+    "startupTimeout": 60000
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "svelte": {
+    "command": "svelteserver",
+    "args": ["--stdio"],
+    "extensionToLanguage": {
+      ".svelte": "svelte"
+    },
+    "startupTimeout": 90000
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "astro": {
+    "command": "astro-ls",
+    "args": ["--stdio"],
+    "extensionToLanguage": {
+      ".astro": "astro"
+    },
+    "startupTimeout": 90000
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "astro-lsp",
+  "description": "Astro language server for Astro components.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Julio Polycarpo",
+    "url": "https://github.com/juliopolycarpo"
+  },
+  "homepage": "https://github.com/juliopolycarpo/mango-lsp-store",
+  "repository": "https://github.com/juliopolycarpo/mango-lsp-store",
+  "license": "MIT",
+  "keywords": ["lsp", "astro"],
+  "lspServers": "./.lsp.json"
+}

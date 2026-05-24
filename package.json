@@ -1,0 +1,21 @@
+{
+  "name": "mango-lsp-store",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "fmt": "bun scripts/fmt.ts",
+    "check": "bun scripts/check.ts",
+    "lint": "biome lint .",
+    "typecheck": "tsgo --noEmit"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.15",
+    "@types/bun": "latest",
+    "@typescript/native-preview": "^7.0.0-dev.20260523.1",
+    "dprint": "^0.54.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

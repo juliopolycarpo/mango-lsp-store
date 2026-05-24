@@ -1,0 +1,10 @@
+{
+  "vue": {
+    "command": "vue-language-server",
+    "args": ["--stdio"],
+    "extensionToLanguage": {
+      ".vue": "vue"
+    },
+    "startupTimeout": 90000
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "biome-web-lsp",
+  "description": "Biome language server for JSON, CSS, and HTML diagnostics and code actions.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Julio Polycarpo",
+    "url": "https://github.com/juliopolycarpo"
+  },
+  "homepage": "https://github.com/juliopolycarpo/mango-lsp-store",
+  "repository": "https://github.com/juliopolycarpo/mango-lsp-store",
+  "license": "MIT",
+  "keywords": ["lsp", "biome", "web", "json", "css", "html"],
+  "lspServers": "./.lsp.json"
+}
