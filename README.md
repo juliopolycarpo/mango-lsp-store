@@ -1,6 +1,7 @@
 # mango-lsp-store
 
-LSP-only Claude Code plugin store for TypeScript, Biome, Vue, Svelte, and Astro.
+LSP-only Claude Code plugin store for TypeScript, Biome, Vue, Svelte, Astro, and
+Markdown.
 
 This V1 intentionally contains no formatter hooks, shell scripts, or JavaScript wrapper scripts. Each plugin points directly at a language-server command through `.lsp.json`.
 
@@ -14,6 +15,7 @@ This V1 intentionally contains no formatter hooks, shell scripts, or JavaScript 
 | `vue-lsp`       | `vue-language-server --stdio`                        | Vue single-file components                    |
 | `svelte-lsp`    | `svelteserver --stdio`                               | Svelte components                             |
 | `astro-lsp`     | `astro-ls --stdio`                                   | Astro components                              |
+| `marksman-lsp`  | `marksman server`                                    | Markdown documents                            |
 
 ## Add The Store
 
@@ -29,6 +31,7 @@ Install only the LSP owners you want:
 /plugin install vue-lsp@mango-lsp
 /plugin install svelte-lsp@mango-lsp
 /plugin install astro-lsp@mango-lsp
+/plugin install marksman-lsp@mango-lsp
 ```
 
 ## Runtime Requirements
@@ -40,9 +43,13 @@ npm install -g @typescript/native-preview
 npm install -g @vue/language-server typescript
 npm install -g svelte-language-server typescript
 npm install -g @astrojs/language-server typescript
+brew install marksman
 ```
 
 Biome is launched with `npx` so the store does not depend on a global `biome` binary. The command uses `@biomejs/biome` explicitly because the npm package named `biome` is not the current Biome CLI package.
+
+Marksman can also be installed with Nix, Snap, or a prebuilt release binary; just make sure
+`marksman` is available on `PATH`.
 
 ## Conflict Policy
 
