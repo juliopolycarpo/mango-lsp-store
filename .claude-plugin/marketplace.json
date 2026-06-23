@@ -61,6 +61,14 @@
       "source": "./plugins/marksman-lsp",
       "category": "development",
       "tags": ["lsp", "markdown", "marksman"]
+    },
+    {
+      "name": "bash-lsp",
+      "version": "1.0.0",
+      "description": "Bash language server for shell scripts.",
+      "source": "./plugins/bash-lsp",
+      "category": "development",
+      "tags": ["lsp", "bash", "shell"]
     }
   ]
 }
