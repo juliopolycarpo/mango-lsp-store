@@ -1,7 +1,7 @@
 {
   "$schema": "https://www.schemastore.org/claude-code-marketplace.json",
   "name": "mango-lsp",
-  "description": "LSP Claude Code plugin store for TypeScript (tsgo), Biome, Vue, Svelte, Astro, Markdown, and Bash.",
+  "description": "LSP Claude Code plugin store for TypeScript (tsgo), Biome, YAML, Vue, Svelte, Astro, Markdown, and Bash.",
   "owner": {
     "name": "Julio Polycarpo"
   },
@@ -29,6 +29,14 @@
       "source": "./plugins/biome-web-lsp",
       "category": "development",
       "tags": ["lsp", "biome", "web", "json", "css", "html"]
+    },
+    {
+      "name": "yaml-lsp",
+      "version": "1.0.0",
+      "description": "YAML language server for YAML documents and schema-aware editing.",
+      "source": "./plugins/yaml-lsp",
+      "category": "development",
+      "tags": ["lsp", "yaml", "schemas"]
     },
     {
       "name": "vue-lsp",

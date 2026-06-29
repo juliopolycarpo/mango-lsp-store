@@ -1,0 +1,14 @@
+{
+  "name": "yaml-lsp",
+  "description": "YAML language server for YAML documents and schema-aware editing.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Julio Polycarpo",
+    "url": "https://github.com/juliopolycarpo"
+  },
+  "homepage": "https://github.com/juliopolycarpo/mango-lsp-store",
+  "repository": "https://github.com/juliopolycarpo/mango-lsp-store",
+  "license": "MIT",
+  "keywords": ["lsp", "yaml", "schemas"],
+  "lspServers": "./.lsp.json"
+}
