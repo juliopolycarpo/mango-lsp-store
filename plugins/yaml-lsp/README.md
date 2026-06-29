@@ -12,6 +12,12 @@ YAML language server for YAML documents and schema-aware editing.
 npm install -g yaml-language-server
 ```
 
+- With bun (Recommended):
+
+```bash
+bun install -g yaml-language-server
+```
+
 ### Or just add your `yaml-language-server` binary to `PATH` if you installed it manually.
 
 ## Command
