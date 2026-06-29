@@ -1,7 +1,7 @@
 # mango-lsp-store
 
-LSP-only Claude Code plugin store for TypeScript, Biome, Vue, Svelte, Astro,
-Markdown, and Bash.
+LSP-only Claude Code plugin store for TypeScript, Biome, YAML, Vue, Svelte,
+Astro, Markdown, and Bash.
 
 This V1 intentionally contains no formatter hooks, shell scripts, or JavaScript wrapper scripts. Each plugin points directly at a language-server command through `.lsp.json`.
 
@@ -12,6 +12,7 @@ This V1 intentionally contains no formatter hooks, shell scripts, or JavaScript 
 | `tsgo-lsp`      | `tsgo --lsp --stdio`                                 | TypeScript and JavaScript                          |
 | `biome-lsp`     | `npx --yes --package @biomejs/biome biome lsp-proxy` | TypeScript and JavaScript diagnostics/actions      |
 | `biome-web-lsp` | `npx --yes --package @biomejs/biome biome lsp-proxy` | JSON, JSONC, CSS, HTML                             |
+| `yaml-lsp`      | `yaml-language-server --stdio`                       | YAML documents (`.yaml`, `.yml`, `.cff`)           |
 | `vue-lsp`       | `vue-language-server --stdio`                        | Vue single-file components                         |
 | `svelte-lsp`    | `svelteserver --stdio`                               | Svelte components                                  |
 | `astro-lsp`     | `astro-ls --stdio`                                   | Astro components                                   |
@@ -29,6 +30,7 @@ Install only the LSP owners you want:
 ```text
 /plugin install tsgo-lsp@mango-lsp
 /plugin install biome-web-lsp@mango-lsp
+/plugin install yaml-lsp@mango-lsp
 /plugin install vue-lsp@mango-lsp
 /plugin install svelte-lsp@mango-lsp
 /plugin install astro-lsp@mango-lsp
@@ -42,6 +44,7 @@ Install the direct binaries somewhere on `PATH`:
 
 ```sh
 npm install -g @typescript/native-preview
+npm install -g yaml-language-server
 npm install -g @vue/language-server typescript
 npm install -g svelte-language-server typescript
 npm install -g @astrojs/language-server typescript
