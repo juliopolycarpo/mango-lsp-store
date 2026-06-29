@@ -1,7 +1,7 @@
 {
   "$schema": "https://www.schemastore.org/claude-code-marketplace.json",
   "name": "mango-lsp",
-  "description": "LSP Claude Code plugin store for TypeScript (tsgo), Biome, Vue, Svelte, and Astro.",
+  "description": "LSP Claude Code plugin store for TypeScript (tsgo), Biome, Vue, Svelte, Astro, Markdown, and Bash.",
   "owner": {
     "name": "Julio Polycarpo"
   },
@@ -61,6 +61,14 @@
       "source": "./plugins/marksman-lsp",
       "category": "development",
       "tags": ["lsp", "markdown", "marksman"]
+    },
+    {
+      "name": "bash-lsp",
+      "version": "1.0.0",
+      "description": "Bash language server for shell scripts.",
+      "source": "./plugins/bash-lsp",
+      "category": "development",
+      "tags": ["lsp", "bash", "shell"]
     }
   ]
 }
