@@ -21,4 +21,4 @@ npx --yes --package @biomejs/biome biome lsp-proxy
 
 ## Notes
 
-This plugin claims the same JavaScript and TypeScript extensions as `tsgo-lsp`. Use `biome-web-lsp` with `tsgo-lsp` when you want Biome only for JSON, CSS, and HTML.
+This plugin claims the same JavaScript and TypeScript extensions as `typescript-lsp` (and `tsgo-lsp`). Use `biome-web-lsp` with `typescript-lsp` when you want Biome only for JSON, CSS, and HTML.

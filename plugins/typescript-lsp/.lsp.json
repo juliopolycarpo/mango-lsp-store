@@ -1,0 +1,17 @@
+{
+  "typescript": {
+    "command": "npx",
+    "args": ["--yes", "--package", "typescript", "tsc", "--", "--lsp", "--stdio"],
+    "extensionToLanguage": {
+      ".ts": "typescript",
+      ".tsx": "typescriptreact",
+      ".mts": "typescript",
+      ".cts": "typescript",
+      ".js": "javascript",
+      ".jsx": "javascriptreact",
+      ".mjs": "javascript",
+      ".cjs": "javascript"
+    },
+    "startupTimeout": 120000
+  }
+}

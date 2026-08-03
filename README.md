@@ -7,17 +7,18 @@ This V1 intentionally contains no formatter hooks, shell scripts, or JavaScript 
 
 ## Plugins
 
-| Plugin          | Command                                              | Languages                                          |
-| --------------- | ---------------------------------------------------- | -------------------------------------------------- |
-| `tsgo-lsp`      | `tsgo --lsp --stdio`                                 | TypeScript and JavaScript                          |
-| `biome-lsp`     | `npx --yes --package @biomejs/biome biome lsp-proxy` | TypeScript and JavaScript diagnostics/actions      |
-| `biome-web-lsp` | `npx --yes --package @biomejs/biome biome lsp-proxy` | JSON, JSONC, CSS, HTML                             |
-| `yaml-lsp`      | `yaml-language-server --stdio`                       | YAML documents (`.yaml`, `.yml`, `.cff`)           |
-| `vue-lsp`       | `vue-language-server --stdio`                        | Vue single-file components                         |
-| `svelte-lsp`    | `svelteserver --stdio`                               | Svelte components                                  |
-| `astro-lsp`     | `astro-ls --stdio`                                   | Astro components                                   |
-| `marksman-lsp`  | `marksman server`                                    | Markdown documents                                 |
-| `bash-lsp`      | `bash-language-server start`                         | Shell scripts (`.sh`, `.bash`, `.inc`, `.command`) |
+| Plugin           | Command                                                      | Languages                                          |
+| ---------------- | ------------------------------------------------------------ | -------------------------------------------------- |
+| `typescript-lsp` | `npx --yes --package typescript tsc -- --lsp --stdio`        | TypeScript and JavaScript                          |
+| `tsgo-lsp`       | `tsgo --lsp --stdio` (compatibility, pre-7.0 preview builds) | TypeScript and JavaScript                          |
+| `biome-lsp`      | `npx --yes --package @biomejs/biome biome lsp-proxy`         | TypeScript and JavaScript diagnostics/actions      |
+| `biome-web-lsp`  | `npx --yes --package @biomejs/biome biome lsp-proxy`         | JSON, JSONC, CSS, HTML                             |
+| `yaml-lsp`       | `yaml-language-server --stdio`                               | YAML documents (`.yaml`, `.yml`, `.cff`)           |
+| `vue-lsp`        | `vue-language-server --stdio`                                | Vue single-file components                         |
+| `svelte-lsp`     | `svelteserver --stdio`                                       | Svelte components                                  |
+| `astro-lsp`      | `astro-ls --stdio`                                           | Astro components                                   |
+| `marksman-lsp`   | `marksman server`                                            | Markdown documents                                 |
+| `bash-lsp`       | `bash-language-server start`                                 | Shell scripts (`.sh`, `.bash`, `.inc`, `.command`) |
 
 ## Add The Store
 
@@ -28,7 +29,7 @@ This V1 intentionally contains no formatter hooks, shell scripts, or JavaScript 
 Install only the LSP owners you want:
 
 ```text
-/plugin install tsgo-lsp@mango-lsp
+/plugin install typescript-lsp@mango-lsp
 /plugin install biome-web-lsp@mango-lsp
 /plugin install yaml-lsp@mango-lsp
 /plugin install vue-lsp@mango-lsp
@@ -43,7 +44,7 @@ Install only the LSP owners you want:
 Install the direct binaries somewhere on `PATH`:
 
 ```sh
-npm install -g @typescript/native-preview
+npm install -g @typescript/native-preview # tsgo-lsp only, compatibility
 npm install -g yaml-language-server
 npm install -g @vue/language-server typescript
 npm install -g svelte-language-server typescript
@@ -52,7 +53,7 @@ npm install -g bash-language-server
 brew install marksman
 ```
 
-Biome is launched with `npx` so the store does not depend on a global `biome` binary. The command uses `@biomejs/biome` explicitly because the npm package named `biome` is not the current Biome CLI package.
+`typescript-lsp` and Biome are both launched with `npx`, so the store does not depend on a global `tsc` or `biome` binary — each resolves the calling project's own installed version first. The Biome command uses `@biomejs/biome` explicitly because the npm package named `biome` is not the current Biome CLI package.
 
 Marksman can also be installed with Nix, Snap, or a prebuilt release binary; just make sure
 `marksman` is available on `PATH`.
@@ -62,4 +63,4 @@ is also installed on `PATH`; it is optional but recommended.
 
 ## Conflict Policy
 
-Claude Code should have one LSP owner per file extension. `tsgo-lsp` and `biome-lsp` both claim JavaScript and TypeScript files; install both only when you intentionally want Biome to compete for those files. The usual setup is `tsgo-lsp` for JS/TS code intelligence plus `biome-web-lsp` for JSON, CSS, and HTML.
+Claude Code should have one LSP owner per file extension. `typescript-lsp`, `tsgo-lsp`, and `biome-lsp` all claim JavaScript and TypeScript files; install only one at a time unless you intentionally want them to compete. The usual setup is `typescript-lsp` for JS/TS code intelligence plus `biome-web-lsp` for JSON, CSS, and HTML. `tsgo-lsp` remains for users still pinned to a pre-7.0 `tsgo` preview build.
