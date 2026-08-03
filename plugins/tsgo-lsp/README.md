@@ -4,9 +4,10 @@ TypeScript and JavaScript language server for Claude Code using `tsgo`.
 
 > **Compatibility plugin.** Since the TypeScript 7.0 release candidate, the
 > native compiler ships as the regular `typescript` package and `tsc`
-> answers `--lsp --stdio` directly — the standalone `tsgo` binary and
-> `@typescript/native-preview` package are no longer published for new
-> versions. Prefer [`typescript-lsp`](../typescript-lsp) for new installs;
+> answers `--lsp --stdio` directly. `@typescript/native-preview` still
+> publishes preview builds that provide the standalone `tsgo` binary, but
+> ongoing development has moved to `typescript` (`typescript@next` for
+> nightlies). Prefer [`typescript-lsp`](../typescript-lsp) for new installs;
 > this plugin stays for users still pinned to a `tsgo` preview build.
 
 ## Installation

@@ -46,14 +46,14 @@ Install the direct binaries somewhere on `PATH`:
 ```sh
 npm install -g @typescript/native-preview # tsgo-lsp only, compatibility
 npm install -g yaml-language-server
-npm install -g @vue/language-server typescript
-npm install -g svelte-language-server typescript
-npm install -g @astrojs/language-server typescript
+npm install -g @vue/language-server typescript@5
+npm install -g svelte-language-server typescript@5
+npm install -g @astrojs/language-server typescript@5
 npm install -g bash-language-server
 brew install marksman
 ```
 
-`typescript-lsp` and Biome are both launched with `npx`, so the store does not depend on a global `tsc` or `biome` binary — each resolves the calling project's own installed version first. The Biome command uses `@biomejs/biome` explicitly because the npm package named `biome` is not the current Biome CLI package.
+`typescript-lsp` and Biome are both launched with `npx`, so the store does not depend on a global `tsc` or `biome` binary. Both commands pass `--package`, which makes `npx` resolve the package's `latest` release into its own cache instead of the calling project's installed copy, so the first run needs network access. For `typescript-lsp` that is intentional: a repo pinned to TypeScript 5 has a `tsc` that rejects `--lsp`. The Biome command uses `@biomejs/biome` explicitly because the npm package named `biome` is not the current Biome CLI package.
 
 Marksman can also be installed with Nix, Snap, or a prebuilt release binary; just make sure
 `marksman` is available on `PATH`.

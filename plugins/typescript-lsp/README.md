@@ -11,13 +11,19 @@ directly, so no separate language-server wrapper is needed.
 
 ### No Installation Required
 
-This package can be used without installation. Just make sure Node.js (or
-Bun) is available so the `npx` command can run directly. `npx` resolves the
-project's own installed `typescript` dependency first, matching whatever
-version each repo already pins.
+This package can be used without installation. Just make sure Node.js and its
+bundled `npx` are available; Bun ships `bunx`, not `npx`, so `bun` alone is
+not enough.
 
-If a repo has no `typescript` dependency installed, `npx` falls back to
-fetching the latest `typescript` release on demand.
+Because the command passes `--package typescript`, `npx` does not fall back
+to the calling project's installed `typescript`: it resolves the `latest`
+dist-tag and runs that from its own cache. This is deliberate — a repo pinned
+to TypeScript 5 has a `tsc` that rejects `--lsp` with
+`error TS5023: Unknown compiler option '--lsp'`, so the server must not be
+tied to the project's pinned version.
+
+The tradeoff is that the first run (or any run with a cold npx cache) needs
+network access to fetch `typescript`.
 
 ## Command
 
