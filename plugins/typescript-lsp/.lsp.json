@@ -1,7 +1,7 @@
 {
   "typescript": {
     "command": "npx",
-    "args": ["--yes", "--package", "typescript", "tsc", "--", "--lsp", "--stdio"],
+    "args": ["--yes", "--package", "typescript@7", "tsc", "--", "--lsp", "--stdio"],
     "extensionToLanguage": {
       ".ts": "typescript",
       ".tsx": "typescriptreact",

@@ -9,7 +9,7 @@ This V1 intentionally contains no formatter hooks, shell scripts, or JavaScript 
 
 | Plugin           | Command                                                      | Languages                                          |
 | ---------------- | ------------------------------------------------------------ | -------------------------------------------------- |
-| `typescript-lsp` | `npx --yes --package typescript tsc -- --lsp --stdio`        | TypeScript and JavaScript                          |
+| `typescript-lsp` | `npx --yes --package typescript@7 tsc -- --lsp --stdio`      | TypeScript and JavaScript                          |
 | `tsgo-lsp`       | `tsgo --lsp --stdio` (compatibility, pre-7.0 preview builds) | TypeScript and JavaScript                          |
 | `biome-lsp`      | `npx --yes --package @biomejs/biome biome lsp-proxy`         | TypeScript and JavaScript diagnostics/actions      |
 | `biome-web-lsp`  | `npx --yes --package @biomejs/biome biome lsp-proxy`         | JSON, JSONC, CSS, HTML                             |
@@ -53,7 +53,7 @@ npm install -g bash-language-server
 brew install marksman
 ```
 
-`typescript-lsp` and Biome are both launched with `npx`, so the store does not depend on a global `tsc` or `biome` binary. Both commands pass `--package`, which makes `npx` resolve the package's `latest` release into its own cache instead of the calling project's installed copy, so the first run needs network access. For `typescript-lsp` that is intentional: a repo pinned to TypeScript 5 has a `tsc` that rejects `--lsp`. The Biome command uses `@biomejs/biome` explicitly because the npm package named `biome` is not the current Biome CLI package.
+`typescript-lsp` and Biome are both launched with `npx`, so the store does not depend on a global `tsc` or `biome` binary. Both commands pass `--package`, which makes `npx` resolve that package into its own cache instead of using the calling project's installed copy, so the first run needs network access. For `typescript-lsp` that is intentional: a repo pinned to TypeScript 5 has a `tsc` that rejects `--lsp`. It asks for `typescript@7` rather than floating on `latest` so a future TypeScript 8 cannot change `--lsp` under every user at once. The Biome command uses `@biomejs/biome` explicitly because the npm package named `biome` is not the current Biome CLI package.
 
 Marksman can also be installed with Nix, Snap, or a prebuilt release binary; just make sure
 `marksman` is available on `PATH`.

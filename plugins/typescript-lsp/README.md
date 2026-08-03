@@ -15,12 +15,16 @@ This package can be used without installation. Just make sure Node.js and its
 bundled `npx` are available; Bun ships `bunx`, not `npx`, so `bun` alone is
 not enough.
 
-Because the command passes `--package typescript`, `npx` does not fall back
-to the calling project's installed `typescript`: it resolves the `latest`
-dist-tag and runs that from its own cache. This is deliberate — a repo pinned
-to TypeScript 5 has a `tsc` that rejects `--lsp` with
+Because the command passes `--package typescript@7`, `npx` does not fall
+back to the calling project's installed `typescript`: it resolves the newest
+7.x release and runs that from its own cache. This is deliberate — a repo
+pinned to TypeScript 5 has a `tsc` that rejects `--lsp` with
 `error TS5023: Unknown compiler option '--lsp'`, so the server must not be
 tied to the project's pinned version.
+
+The major is pinned rather than floating on `latest` so that a future
+TypeScript 8 cannot change or drop `--lsp` under every user at once.
+Bumping it is a deliberate release here.
 
 The tradeoff is that the first run (or any run with a cold npx cache) needs
 network access to fetch `typescript`.
@@ -28,7 +32,7 @@ network access to fetch `typescript`.
 ## Command
 
 ```text
-npx --yes --package typescript tsc -- --lsp --stdio
+npx --yes --package typescript@7 tsc -- --lsp --stdio
 ```
 
 ## Supported Extensions
