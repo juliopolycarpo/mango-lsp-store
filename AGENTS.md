@@ -24,7 +24,7 @@ Plugin names use lowercase kebab-case ending in `-lsp`, such as `tsgo-lsp` or `b
 
 This checkout has no local Git history, so no commit convention can be inferred. Use short, imperative commit subjects, for example `Add astro LSP plugin metadata` or `Document Biome web ownership`.
 
-Pull requests should follow `.github/pull_request_template.md`: include a summary, confirm `bun run check`, update plugin docs when behavior changes, and keep plugins focused on LSP configuration only. Document intentional language ownership overlap, especially between `tsgo-lsp` and `biome-lsp`.
+Pull requests should follow `.github/pull_request_template.md`: include a summary, confirm `bun run check`, update plugin docs when behavior changes, and keep plugins focused on LSP configuration only. Document intentional language ownership overlap, especially between `typescript-lsp` (or `tsgo-lsp`) and `biome-lsp`.
 
 ## Agent-Specific Instructions
 

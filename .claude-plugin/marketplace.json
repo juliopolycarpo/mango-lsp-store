@@ -1,15 +1,23 @@
 {
   "$schema": "https://www.schemastore.org/claude-code-marketplace.json",
   "name": "mango-lsp",
-  "description": "LSP Claude Code plugin store for TypeScript (tsgo), Biome, YAML, Vue, Svelte, Astro, Markdown, and Bash.",
+  "description": "LSP Claude Code plugin store for TypeScript, Biome, YAML, Vue, Svelte, Astro, Markdown, and Bash.",
   "owner": {
     "name": "Julio Polycarpo"
   },
   "plugins": [
     {
+      "name": "typescript-lsp",
+      "version": "1.0.0",
+      "description": "TypeScript and JavaScript code intelligence via tsc's native LSP mode.",
+      "source": "./plugins/typescript-lsp",
+      "category": "development",
+      "tags": ["lsp", "typescript", "javascript", "tsc"]
+    },
+    {
       "name": "tsgo-lsp",
       "version": "1.0.0",
-      "description": "TypeScript and JavaScript code intelligence via tsgo.",
+      "description": "TypeScript and JavaScript code intelligence via tsgo. Compatibility plugin for pre-7.0 tsgo preview builds; prefer typescript-lsp for new installs.",
       "source": "./plugins/tsgo-lsp",
       "category": "development",
       "tags": ["lsp", "typescript", "javascript", "tsgo"]
