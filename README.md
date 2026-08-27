@@ -11,8 +11,8 @@ This V1 intentionally contains no formatter hooks, shell scripts, or JavaScript 
 | ---------------- | ------------------------------------------------------------ | -------------------------------------------------- |
 | `typescript-lsp` | `tsc --lsp --stdio`                                          | TypeScript and JavaScript                          |
 | `tsgo-lsp`       | `tsgo --lsp --stdio` (compatibility, pre-7.0 preview builds) | TypeScript and JavaScript                          |
-| `biome-lsp`      | `npx --yes --package @biomejs/biome biome lsp-proxy`         | TypeScript and JavaScript diagnostics/actions      |
-| `biome-web-lsp`  | `npx --yes --package @biomejs/biome biome lsp-proxy`         | JSON, JSONC, CSS, HTML                             |
+| `biome-lsp`      | `biome lsp-proxy`                                            | TypeScript and JavaScript diagnostics/actions      |
+| `biome-web-lsp`  | `biome lsp-proxy`                                            | JSON, JSONC, CSS, HTML                             |
 | `yaml-lsp`       | `yaml-language-server --stdio`                               | YAML documents (`.yaml`, `.yml`, `.cff`)           |
 | `vue-lsp`        | `vue-language-server --stdio`                                | Vue single-file components                         |
 | `svelte-lsp`     | `svelteserver --stdio`                                       | Svelte components                                  |
@@ -52,11 +52,14 @@ npm install -g svelte-language-server typescript@5
 npm install -g @astrojs/language-server typescript@5
 npm install -g bash-language-server
 brew install marksman
+brew install biome
 ```
 
 `typescript-lsp` runs the `tsc` on `PATH`, so it needs the global `typescript@7` install above. The major is pinned rather than floating on `latest` so a future TypeScript 8 cannot change or drop `--lsp` under every user at once. Because the server is launched from `PATH` and not from the project's `node_modules`, a repo pinned to TypeScript 5 or 6 — whose `tsc` rejects `--lsp` — still gets a working language server.
 
-Biome is launched with `npx`, so the store does not depend on a global `biome` binary. The command passes `--package @biomejs/biome`, which makes `npx` resolve that package into its own cache instead of using the calling project's installed copy, so the first run needs network access. It names `@biomejs/biome` explicitly because the npm package named `biome` is not the current Biome CLI package.
+`biome-lsp` and `biome-web-lsp` run the `biome` on `PATH`, so any install channel works: Homebrew, Winget, `pacman -S biome`, a standalone release binary, or a global `@biomejs/biome` from npm or bun. Only the last of those needs Node.js — the npm package ships a Node shim that dispatches to the platform's `@biomejs/cli-*` binary, while the standalone executables run on their own.
+
+Because the server is launched from `PATH` and not from the project's `node_modules`, its version is your global install rather than the Biome a repo pins as a dev dependency; the two can report different diagnostics if they drift apart.
 
 Marksman can also be installed with Nix, Snap, or a prebuilt release binary; just make sure
 `marksman` is available on `PATH`.

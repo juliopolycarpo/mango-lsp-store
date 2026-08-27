@@ -24,7 +24,7 @@
     },
     {
       "name": "biome-lsp",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "description": "Biome language server for JavaScript and TypeScript diagnostics and code actions.",
       "source": "./plugins/biome-lsp",
       "category": "development",
@@ -32,7 +32,7 @@
     },
     {
       "name": "biome-web-lsp",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "description": "Biome language server for JSON, CSS, and HTML diagnostics and code actions.",
       "source": "./plugins/biome-web-lsp",
       "category": "development",
