@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "typescript-lsp",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "description": "TypeScript and JavaScript code intelligence via tsc's native LSP mode.",
       "source": "./plugins/typescript-lsp",
       "category": "development",
