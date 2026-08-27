@@ -1,7 +1,7 @@
 {
   "biome": {
-    "command": "npx",
-    "args": ["--yes", "--package", "@biomejs/biome", "biome", "lsp-proxy"],
+    "command": "biome",
+    "args": ["lsp-proxy"],
     "extensionToLanguage": {
       ".js": "javascript",
       ".jsx": "javascriptreact",
