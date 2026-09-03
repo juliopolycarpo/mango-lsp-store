@@ -1,0 +1,14 @@
+{
+  "name": "pyright-lsp",
+  "description": "Python language server for Python code intelligence via the Pyright language server.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Julio Polycarpo",
+    "url": "https://github.com/juliopolycarpo"
+  },
+  "homepage": "https://github.com/juliopolycarpo/mango-lsp-store",
+  "repository": "https://github.com/juliopolycarpo/mango-lsp-store",
+  "license": "MIT",
+  "keywords": ["lsp", "python", "pyright"],
+  "lspServers": "./.lsp.json"
+}

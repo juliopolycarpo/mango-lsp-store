@@ -1,7 +1,7 @@
 # mango-lsp-store
 
 LSP-only Claude Code plugin store for TypeScript, Biome, YAML, Vue, Svelte,
-Astro, Markdown, and Bash.
+Astro, Markdown, Bash, and Python.
 
 This V1 intentionally contains no formatter hooks, shell scripts, or JavaScript wrapper scripts. Each plugin points directly at a language-server command through `.lsp.json`.
 
@@ -19,6 +19,7 @@ This V1 intentionally contains no formatter hooks, shell scripts, or JavaScript 
 | `astro-lsp`      | `astro-ls --stdio`                                           | Astro components                                   |
 | `marksman-lsp`   | `marksman server`                                            | Markdown documents                                 |
 | `bash-lsp`       | `bash-language-server start`                                 | Shell scripts (`.sh`, `.bash`, `.inc`, `.command`) |
+| `pyright-lsp`    | `pyright-langserver --stdio`                                 | Python (`.py`, `.pyi`, `.pyw`)                     |
 
 ## Add The Store
 
@@ -37,6 +38,7 @@ Install only the LSP owners you want:
 /plugin install astro-lsp@mango-lsp
 /plugin install marksman-lsp@mango-lsp
 /plugin install bash-lsp@mango-lsp
+/plugin install pyright-lsp@mango-lsp
 ```
 
 ## Runtime Requirements
@@ -51,6 +53,7 @@ npm install -g @vue/language-server typescript@5
 npm install -g svelte-language-server typescript@5
 npm install -g @astrojs/language-server typescript@5
 npm install -g bash-language-server
+npm install -g pyright
 brew install marksman
 brew install biome
 ```
@@ -60,6 +63,13 @@ brew install biome
 `biome-lsp` and `biome-web-lsp` run the `biome` on `PATH`, so any install channel works: Homebrew, Winget, `pacman -S biome`, a standalone release binary, or a global `@biomejs/biome` from npm or bun. Only the last of those needs Node.js — the npm package ships a Node shim that dispatches to the platform's `@biomejs/cli-*` binary, while the standalone executables run on their own.
 
 Because the server is launched from `PATH` and not from the project's `node_modules`, its version is your global install rather than the Biome a repo pins as a dev dependency; the two can report different diagnostics if they drift apart.
+
+`pyright-lsp` runs the `pyright-langserver` on `PATH`, so it needs the global
+`pyright` install above. Pyright is a Node.js server, so Node must also be on
+`PATH`; it still honors the project's `pyrightconfig.json` or
+`[tool.pyright]` in `pyproject.toml`. [basedpyright](https://github.com/detachhead/basedpyright)
+is a drop-in fork that also ships a `pyright-langserver` binary, so installing
+`basedpyright` instead works unchanged.
 
 Marksman can also be installed with Nix, Snap, or a prebuilt release binary; just make sure
 `marksman` is available on `PATH`.
